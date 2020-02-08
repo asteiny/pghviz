@@ -1,0 +1,171 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: calc(100% - 16px);
+}
+
+#dropdownDiv {
+    padding: 0px;
+    margin: 5px;
+    height: 5%;
+    border: solid 1px #e09641;
+    background-color: #607bd2;
+    text-align: center;
+}
+    #dropdownDiv .tooltiptext {
+        visibility: hidden;
+        width: 130px;
+        background-color: white;
+        color: black;
+        text-align: center;
+        padding: 2px;
+        border-radius: 6px;
+        border: solid 1px;
+        position: absolute;
+        z-index: 1;
+        font-size: smaller;
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    #dropdownDiv:hover .tooltiptext {
+        visibility: visible;
+    }
+
+#dropdownSelect {
+    background-color: #607bd2;
+    color: white;
+    font-size: 3.5vh;
+    border: solid 2px #e09641;
+    height: 100%;
+}
+
+#mapChartDiv {
+    padding: 0px;
+    margin: 5px;
+    height: 40%;
+}
+
+#mapDiv {
+    float: left;
+    padding: 0px;
+    margin-right: 2px;
+    height: 100%;
+    width: 60%;
+    border: solid 1px #e09641;
+}
+
+#mapTitle {
+    position: absolute;
+    left: 80px;
+    top: 60px;
+    color: black;
+    font-size: 4vh;
+}
+
+#legend {
+    position: absolute;
+    width: 95px;
+    left: calc(60% - 110px);
+    top: calc(8vh + 27px);
+    color: #323232;
+    background-color: #eee;
+    font-size: 16px;
+    display: none;
+    border: solid 1px #e09641;
+    border-radius: 6px;
+    padding: 3px;
+}
+
+#legendToggle {
+    position: absolute;
+    width: 95px;
+    left: calc(60% - 110px);
+    top: 8vh;
+    color: white;
+    background-color: #607bd2;
+    font-size: 16px;
+    display: block;
+    border: solid 1px #e09641;
+    border-radius: 6px;
+    padding: 3px;
+    text-align: center;
+    cursor: pointer;
+}
+
+    /* Tooltip text */
+    #legendToggle .tooltiptext {
+        visibility: hidden;
+        width: 130px;
+        background-color: white;
+        color: black;
+        text-align: center;
+        padding: 2px;
+        border-radius: 6px;
+        border: solid 1px;
+        position: absolute;
+        z-index: 1;
+        left: calc(60% + 43px);
+        font-size:smaller;
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    #legendToggle:hover .tooltiptext {
+        visibility: visible;
+    }
+
+#chartDiv {
+    float: left;
+    padding: 0px;
+    margin-left: 3px;
+    height: 100%;
+    width: calc(40% - 9px);
+    border: solid 1px #e09641;
+}
+
+#aboutDiv {
+    padding: 5px;
+    margin: 5px;
+    overflow-y: auto;
+    height: 23%;
+    width: calc(100% - 22px);
+    border: solid 1px #e09641;
+}
+
+    #aboutDiv p {
+        margin: 5px;
+    }
+
+.aboutTitle {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#demographicsDiv {
+    padding: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    float: left;
+    /*height: calc(27% - 40px);*/
+    width: calc(100% - 12px);
+    border: solid 1px #e09641;
+}
+
+.demographicsCell {
+    padding: 10px;
+    float: left;
+    width: 15vw;
+}
+
+.demographicsTitle {
+    white-space: nowrap;
+    margin: 2px;
+    font-size: 1.75vw;
+}
+
+.demographicsValue {
+    white-space: nowrap;
+    margin: 2px;
+    font-size: 1.25vw;
+}
