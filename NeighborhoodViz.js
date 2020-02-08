@@ -34,21 +34,34 @@ require([
 
     // Query the neighborhood layer to get the list of neighborhood names and Ids and add them to the dropdown list
     var queryTask = new QueryTask({
-        url: "https://services9.arcgis.com/r2aSdvRtDKoaZzPC/ArcGIS/rest/services/Neighborhoods_PGH_dummy_data/FeatureServer/0"
+        url: "https://services9.arcgis.com/r2aSdvRtDKoaZzPC/arcgis/rest/services/Pittsburgh_Neighborhood_Database_GDB/FeatureServer/0"
     });
     var query = new Query();
     query.returnGeometry = false;
-    query.outFields = ["hood_no", "hood"];
+    query.outFields = ["hood"];
     query.where = "0=0";
     var select = document.getElementById("dropdownSelect");
     queryTask.execute(query).then(function (results) {
         var numFeatures = results.features.length;
+        var options = [];
         for (var i = 0; i < numFeatures; i++) {
             var feature = results.features[i];
             var el = document.createElement("option");
             el.textContent = feature.attributes.hood;
-            el.value = feature.attributes.hood_no;
-            select.appendChild(el);
+            el.value = feature.attributes.hood;
+            options.push(el); //select.appendChild(el);
+        }
+
+        // Sort the neighborhoods
+        options.sort(function (a, b) {
+            if (a.text.toUpperCase() > b.text.toUpperCase()) return 1;
+            else if (a.text.toUpperCase() < b.text.toUpperCase()) return -1;
+            else return 0;
+        });
+
+        // Add to the select element
+        for (var i = 0; i < numFeatures; i++) {
+            select.appendChild(options[i]);
         }
 
         // Show the first neighborhood in the list
@@ -77,9 +90,9 @@ require([
         // Create the parcels layer
         var featureLayer = new FeatureLayer({
             title: "Parcels",
-            url: "https://services9.arcgis.com/r2aSdvRtDKoaZzPC/ArcGIS/rest/services/Parcels_PGH/FeatureServer/0",
-            outFields: ["hood_no"],
-            definitionExpression: "hood_no = " + neighborhoodIdStr
+            url: "https://services9.arcgis.com/r2aSdvRtDKoaZzPC/arcgis/rest/services/Parcels/FeatureServer",
+            outFields: ["NHood"],
+            definitionExpression: "NHood = '" + neighborhoodIdStr + "'"
         });
         map.add(featureLayer);
 
@@ -91,6 +104,7 @@ require([
                 style: "none",
                 outline: {
                     style: "solid",
+                    width: "3px",
                     color: "brown"
                 }
             }
@@ -99,16 +113,16 @@ require([
         // Create the neighborhood layer
         featureLayer = new FeatureLayer({
             title: "Neighborhood",
-            url: "https://services9.arcgis.com/r2aSdvRtDKoaZzPC/ArcGIS/rest/services/Neighborhoods_PGH_dummy_data/FeatureServer/0",
-            outFields: ["sqmiles","POP_17", "POP_PCT_CITY", "LU_RETAIL", "LU_OFFICE", "LU_IND", "LU_PUB", "LU_RES", "LU_OS"],
+            url: "https://services9.arcgis.com/r2aSdvRtDKoaZzPC/arcgis/rest/services/Pittsburgh_Neighborhood_Database_GDB/FeatureServer/0",
+            outFields: ["SqMi", "SqMi_Pct", "POP_17", "POP_PCT_CI", "EMP_17", "EMP_PCT_CI", "HU_17", "HU_PCT_CIT", "HHI_17", "HHI_CITYAV", "NAUTO_MODE", "AUTO_CITYA", "RCOSTB_PT", "OCOSTB_CIT", "WID_Norm", "WID_city", "VACAC_N", "VACAC_PCT", "GHG", "GHG_City", "CONTEXT", "LU_COM", "LU_RES", "LU_PUB", "LU_IND", "LU_OS", "LU_VAC", "LU_OTH", "LU_MU"],
             renderer: neighborhoodRenderer,
-            definitionExpression: "hood_no = " + neighborhoodIdStr
+            definitionExpression: "hood = '" + neighborhoodIdStr + "'"
         });
         map.add(featureLayer);
 
         // Zoom to the extent of the selected neighborhood
         var query = new Query();
-        query.where = "hood_no = " + neighborhoodIdStr;
+        query.where = "hood = '" + neighborhoodIdStr + "'";
         query.returnGeometry = true;
         featureLayer.queryFeatures(query).then(function (featureSet) {
             if (featureSet.features.length > 0) {
@@ -133,18 +147,44 @@ require([
                     if (!val) {  // wait for the layer view to finish updating
                         layerView.queryFeatures().then(function (results) {
                             isNewNeighborhood = false;
-                            document.getElementById("sqmiles").innerText = results.features[0].attributes.sqmiles + " Square Miles";
-                            document.getElementById("sqmiles_PCT_CITY").innerText = (parseFloat(results.features[0].attributes.sqmiles) / 58.34 * 100).toFixed(2).toString() + "% of Pittsburgh";
-                            document.getElementById("POP_17").innerText = results.features[0].attributes.POP_17;
-                            document.getElementById("POP_PCT_CITY").innerText = "(" + results.features[0].attributes.POP_PCT_CITY + " of Pittsburgh)";
+
+                            // Update the metrics
+                            document.getElementById("SqMi").innerText = numberWithCommas(results.features[0].attributes.SqMi) + " Square Miles";
+                            document.getElementById("SqMi_Pct").innerText = "(" + (results.features[0].attributes.SqMi_Pct * 100).toFixed(2).toString() + "% of Pittsburgh)";
+                            document.getElementById("POP_17").innerText = numberWithCommas(results.features[0].attributes.POP_17);
+                            document.getElementById("POP_PCT_CI").innerText = "(" + results.features[0].attributes.POP_PCT_CI + "% of Pittsburgh)";
+                            document.getElementById("EMP_17").innerText = numberWithCommas(results.features[0].attributes.EMP_17);
+                            document.getElementById("EMP_PCT_CI").innerText = "(" + results.features[0].attributes.EMP_PCT_CI + "% of Pittsburgh)";
+                            document.getElementById("HU_17").innerText = numberWithCommas(results.features[0].attributes.HU_17);
+                            document.getElementById("HU_PCT_CIT").innerText = "(" + results.features[0].attributes.HU_PCT_CIT + "% of Pittsburgh)";
+                            document.getElementById("HHI_17").innerText = "$" + numberWithCommas(results.features[0].attributes.HHI_17);
+                            document.getElementById("HHI_CITYAV").innerText = "($" + numberWithCommas(results.features[0].attributes.HHI_CITYAV).toString() + " Pittsburgh Median)";
+                            document.getElementById("NAUTO_MODE").innerText = numberWithCommas(results.features[0].attributes.NAUTO_MODE) + "%";
+                            document.getElementById("AUTO_CITYA").innerText = "(" + numberWithCommas(results.features[0].attributes.AUTO_CITYA).toString() + "% of Pittsburgh)";
+                            document.getElementById("RCOSTB_PT").innerText = numberWithCommas(results.features[0].attributes.RCOSTB_PT) + "%";
+                            document.getElementById("OCOSTB_CIT").innerText = "(" + numberWithCommas(results.features[0].attributes.OCOSTB_CIT).toString() + "% of Pittsburgh)";
+                            document.getElementById("WID_Norm").innerText = numberWithCommas(results.features[0].attributes.WID_Norm) + " (Ints./square mile)";
+                            document.getElementById("WID_city").innerText = "(" + numberWithCommas(results.features[0].attributes.WID_city).toString() + " Pittsburgh average)";
+                            document.getElementById("VACAC_N").innerText = numberWithCommas(results.features[0].attributes.VACAC_N.toFixed(2)).toString() + " (acres)";
+                            document.getElementById("VACAC_PCT").innerText = "(" + numberWithCommas(results.features[0].attributes.VACAC_PCT.toFixed(4)).toString() + "% of city vacant land)";
+                            document.getElementById("GHG").innerText = numberWithCommas(results.features[0].attributes.GHG) + " (emissions per capita)";
+                            document.getElementById("GHG_City").innerText = "(" + numberWithCommas(results.features[0].attributes.GHG_City).toString() + " Pittsburgh average)";
+
+                            // Update the neighborhood description
+                            var context = results.features[0].attributes.CONTEXT;
+                            if (context == "" || context == null) { context = "No information available about this neighborhood." }
+                            document.getElementById("context").innerText = context;
+
                             // Create the chart
                             chartData = [];
-                            chartData.push(parseInt(results.features[0].attributes.LU_RETAIL));
-                            chartData.push(parseInt(results.features[0].attributes.LU_OFFICE));
+                            chartData.push(parseInt(results.features[0].attributes.LU_COM));
                             chartData.push(parseInt(results.features[0].attributes.LU_IND));
+                            chartData.push(parseInt(results.features[0].attributes.LU_MU));
+                            chartData.push(parseInt(results.features[0].attributes.LU_OS));
+                            chartData.push(parseInt(results.features[0].attributes.LU_OTH));
                             chartData.push(parseInt(results.features[0].attributes.LU_PUB));
                             chartData.push(parseInt(results.features[0].attributes.LU_RES));
-                            chartData.push(parseInt(results.features[0].attributes.LU_OS));
+                            chartData.push(parseInt(results.features[0].attributes.LU_VAC));
                             drawChart();
                         });
                     }
@@ -176,12 +216,14 @@ function resizeAll() {
 function drawChart() {
     var data = google.visualization.arrayToDataTable([
         ['Type', 'Total'],
-        ['Retail', chartData[0]],
-        ['Office', chartData[1]],
-        ['Industrial', chartData[2]],
-        ['Public', chartData[3]],
-        ['Residential', chartData[4]],
-        ['Open Space', chartData[5]]
+        ['Commercial', chartData[0]],
+        ['Industrial', chartData[3]],
+        ['Mixed Use', chartData[7]],
+        ['Open Space', chartData[4]],
+        ['Other', chartData[6]],
+        ['Public/Quasi Public', chartData[2]],
+        ['Residential', chartData[1]],
+        ['Vacant', chartData[5]]
     ]);
 
     var options = {
@@ -193,7 +235,7 @@ function drawChart() {
             bold: true,
             italic: false
         },
-        //colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        colors: ['red', 'rgb(160,32,240)', 'rgb(255, 170, 0)', 'rgb(34,139,34)', 'rgb(244,115,223)', 'rgb(0,92,230)', 'rgb(255,255,0)', 'rgb(130,130,130)'],
         chartArea: {
             left: "10%",
             top: "10%",
@@ -215,4 +257,11 @@ function toggleLegend() {
     else {
         document.getElementById("legend").style.display = "none";
     }
+}
+
+// Format numbers with commas
+function numberWithCommas(x) {
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return parts.join(".");
 }

@@ -61,13 +61,13 @@ body {
     left: 80px;
     top: 60px;
     color: black;
-    font-size: 4vh;
+    font-size: 3.5vh;
 }
 
 #legend {
     position: absolute;
-    width: 95px;
-    left: calc(60% - 110px);
+    width: 105px;
+    left: calc(60% - 120px);
     top: calc(8vh + 27px);
     color: #323232;
     background-color: #eee;
@@ -78,10 +78,16 @@ body {
     padding: 3px;
 }
 
+.legendItems {
+    width: 20px;
+    margin: 0px 2px 0px 0px;
+    font-size: smaller;
+}
+
 #legendToggle {
     position: absolute;
-    width: 95px;
-    left: calc(60% - 110px);
+    width: 105px;
+    left: calc(60% - 120px);
     top: 8vh;
     color: white;
     background-color: #607bd2;
@@ -106,7 +112,7 @@ body {
         border: solid 1px;
         position: absolute;
         z-index: 1;
-        left: calc(60% + 43px);
+        left: calc(60% + 48px);
         font-size:smaller;
     }
 
@@ -151,11 +157,15 @@ body {
     width: calc(100% - 12px);
     border: solid 1px #e09641;
 }
+    #demographicsDiv .demographicsCell:nth-of-type(odd) {
+        background-color: #f2f2f2;
+    }
 
 .demographicsCell {
     padding: 10px;
     float: left;
     width: 15vw;
+    border: solid 1px #e09641;
 }
 
 .demographicsTitle {
@@ -168,4 +178,8 @@ body {
     white-space: nowrap;
     margin: 2px;
     font-size: 1.25vw;
+}
+
+#context {
+    font-size: 2.2vh;
 }
