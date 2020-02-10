@@ -160,9 +160,9 @@ require([
                             document.getElementById("HHI_17").innerText = "$" + numberWithCommas(results.features[0].attributes.HHI_17);
                             document.getElementById("HHI_CITYAV").innerText = "($" + numberWithCommas(results.features[0].attributes.HHI_CITYAV).toString() + " Pittsburgh Median)";
                             document.getElementById("NAUTO_MODE").innerText = numberWithCommas(results.features[0].attributes.NAUTO_MODE) + "%";
-                            document.getElementById("AUTO_CITYA").innerText = "(" + numberWithCommas(results.features[0].attributes.AUTO_CITYA).toString() + "% of Pittsburgh)";
+                            document.getElementById("AUTO_CITYA").innerText = "(" + numberWithCommas(results.features[0].attributes.AUTO_CITYA).toString() + "% citywide)";
                             document.getElementById("RCOSTB_PT").innerText = numberWithCommas(results.features[0].attributes.RCOSTB_PT) + "%";
-                            document.getElementById("OCOSTB_CIT").innerText = "(" + numberWithCommas(results.features[0].attributes.OCOSTB_CIT).toString() + "% of Pittsburgh)";
+                            document.getElementById("OCOSTB_CIT").innerText = "(" + numberWithCommas(results.features[0].attributes.OCOSTB_CIT).toString() + "% citywide)";
                             document.getElementById("WID_Norm").innerText = numberWithCommas(results.features[0].attributes.WID_Norm) + " (Ints./square mile)";
                             document.getElementById("WID_city").innerText = "(" + numberWithCommas(results.features[0].attributes.WID_city).toString() + " Pittsburgh average)";
                             document.getElementById("VACAC_N").innerText = numberWithCommas(results.features[0].attributes.VACAC_N.toFixed(2)).toString() + " (acres)";
@@ -177,14 +177,14 @@ require([
 
                             // Create the chart
                             chartData = [];
-                            chartData.push(parseInt(results.features[0].attributes.LU_COM));
-                            chartData.push(parseInt(results.features[0].attributes.LU_IND));
-                            chartData.push(parseInt(results.features[0].attributes.LU_MU));
-                            chartData.push(parseInt(results.features[0].attributes.LU_OS));
-                            chartData.push(parseInt(results.features[0].attributes.LU_OTH));
-                            chartData.push(parseInt(results.features[0].attributes.LU_PUB));
-                            chartData.push(parseInt(results.features[0].attributes.LU_RES));
-                            chartData.push(parseInt(results.features[0].attributes.LU_VAC));
+                            chartData.push(parseFloat(results.features[0].attributes.LU_COM));
+                            chartData.push(parseFloat(results.features[0].attributes.LU_IND));
+                            chartData.push(parseFloat(results.features[0].attributes.LU_MU));
+                            chartData.push(parseFloat(results.features[0].attributes.LU_OS));
+                            chartData.push(parseFloat(results.features[0].attributes.LU_OTH));
+                            chartData.push(parseFloat(results.features[0].attributes.LU_PUB));
+                            chartData.push(parseFloat(results.features[0].attributes.LU_RES));
+                            chartData.push(parseFloat(results.features[0].attributes.LU_VAC));
                             drawChart();
                         });
                     }
@@ -217,14 +217,19 @@ function drawChart() {
     var data = google.visualization.arrayToDataTable([
         ['Type', 'Total'],
         ['Commercial', chartData[0]],
-        ['Industrial', chartData[3]],
-        ['Mixed Use', chartData[7]],
-        ['Open Space', chartData[4]],
-        ['Other', chartData[6]],
-        ['Public/Quasi Public', chartData[2]],
-        ['Residential', chartData[1]],
-        ['Vacant', chartData[5]]
+        ['Industrial', chartData[1]],
+        ['Mixed Use', chartData[2]],
+        ['Open Space', chartData[3]],
+        ['Other', chartData[4]],
+        ['Public/Quasi Public', chartData[5]],
+        ['Residential', chartData[6]],
+        ['Vacant', chartData[7]]
     ]);
+
+    var NumberFormat = new google.visualization.NumberFormat(
+        { pattern: '##.#' }
+    );
+    NumberFormat.format(data, 1); // Apply formatter to second column
 
     var options = {
         title: 'Land Area Mix',
