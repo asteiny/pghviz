@@ -17,8 +17,7 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
     padding: 0px;
     margin: 5px;
     height: 5%;
-    border: solid 1px #e09641;
-    background-color: #607bd2;
+    background-color: #2699fb;
     text-align: center;
 }
     #dropdownDiv .tooltiptext {
@@ -41,11 +40,19 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
     }
 
 #dropdownSelect {
-    background-color: #607bd2;
-    color: white;
-    font-size: 3.5vh;
-    border: solid 2px #e09641;
-    height: 100%;
+    background-color: #2699fb;
+    font-family: "Open Sans"; 
+	font-size: 12px; 
+	color: white;
+	font-style: normal; 
+	font-variant: normal; 
+	font-weight: 700; 
+	line-height: 15.4px;
+    font-size: 2.5vh;
+    border: solid 2px #ffffff;
+	border-radius: 10px;
+    height: 90%;
+	Margin-top:2px;
 }
 
 #mapChartDiv {
@@ -72,15 +79,16 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
 }
 
 #legend {
+	font-family: "Open Sans";
     position: absolute;
     width: 105px;
     left: calc(60% - 120px);
     top: calc(8vh + 27px);
     color: #323232;
-    background-color: #eee;
-    font-size: 16px;
+    background-color: #f2f2f2;
+    font-size: 1.2vw;
     display: none;
-    border: solid 1px #e09641;
+    
     border-radius: 6px;
     padding: 3px;
 }
@@ -92,15 +100,16 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
 }
 
 #legendToggle {
+	font-family: "Open Sans";
     position: absolute;
     width: 105px;
     left: calc(60% - 120px);
     top: 8vh;
     color: white;
-    background-color: #607bd2;
-    font-size: 16px;
+    background-color:  #2699fb;
+    font-size: 12px;
     display: block;
-    border: solid 1px #e09641;
+  
     border-radius: 6px;
     padding: 3px;
     text-align: center;
@@ -116,7 +125,7 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
         text-align: center;
         padding: 2px;
         border-radius: 6px;
-        border: solid 1px;
+     
         position: absolute;
         z-index: 1;
         left: calc(60% + 48px);
@@ -177,13 +186,13 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
 }
 
 .demographicsCell:hover {
-background-color: #3e8e41;
+background-color: #2699fb;
   color: white;	
 }
 
 .demographicsTitle {
     white-space: nowrap;
-    margin-top: 5px;
+    margin-top: 1vw;
     font-family: "Open Sans"; 
 	font-size: 1.5vw; 
 	font-style: normal; 

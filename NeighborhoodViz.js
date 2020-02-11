@@ -149,7 +149,7 @@ require([
                             isNewNeighborhood = false;
 
                             // Update the metrics
-                            document.getElementById("SqMi").innerText = numberWithCommas(results.features[0].attributes.SqMi) + " Sqmi";
+                            document.getElementById("SqMi").innerText = numberWithCommas(results.features[0].attributes.SqMi);
                             document.getElementById("SqMi_Pct").innerText = "(" + (results.features[0].attributes.SqMi_Pct * 100).toFixed(2).toString() + "% of Pittsburgh)";
                             document.getElementById("POP_17").innerText = numberWithCommas(results.features[0].attributes.POP_17);
                             document.getElementById("POP_PCT_CI").innerText = "(" + results.features[0].attributes.POP_PCT_CI + "% of Pittsburgh)";
@@ -160,15 +160,15 @@ require([
                             document.getElementById("HHI_17").innerText = "$" + numberWithCommas(results.features[0].attributes.HHI_17);
                             document.getElementById("HHI_CITYAV").innerText = "($" + numberWithCommas(results.features[0].attributes.HHI_CITYAV).toString() + " Pittsburgh Median)";
                             document.getElementById("NAUTO_MODE").innerText = numberWithCommas(results.features[0].attributes.NAUTO_MODE) + "%";
-                            document.getElementById("AUTO_CITYA").innerText = "(" + numberWithCommas(results.features[0].attributes.AUTO_CITYA).toString() + "% citywide)";
+                            document.getElementById("AUTO_CITYA").innerText = "(" + numberWithCommas(results.features[0].attributes.AUTO_CITYA).toString() + "% Citywide)";
                             document.getElementById("RCOSTB_PT").innerText = numberWithCommas(results.features[0].attributes.RCOSTB_PT) + "%";
-                            document.getElementById("OCOSTB_CIT").innerText = "(" + numberWithCommas(results.features[0].attributes.OCOSTB_CIT).toString() + "% citywide)";
+                            document.getElementById("OCOSTB_CIT").innerText = "(" + numberWithCommas(results.features[0].attributes.OCOSTB_CIT).toString() + "% Citywide)";
                             document.getElementById("WID_Norm").innerText = numberWithCommas(results.features[0].attributes.WID_Norm);
-                            document.getElementById("WID_city").innerText = "(" + numberWithCommas(results.features[0].attributes.WID_city).toString() + " Pittsburgh average)";
-                            document.getElementById("VACAC_N").innerText = numberWithCommas(results.features[0].attributes.VACAC_N.toFixed(2)).toString() + " (acres)";
-                            document.getElementById("VACAC_PCT").innerText = "(" + numberWithCommas(results.features[0].attributes.VACAC_PCT.toFixed(4)).toString() + "% of city vacant land)";
+                            document.getElementById("WID_city").innerText = "(" + numberWithCommas(results.features[0].attributes.WID_city).toString() + " Pittsburgh Average)";
+                            document.getElementById("VACAC_N").innerText = numberWithCommas(results.features[0].attributes.VACAC_N.toFixed(2)).toString();
+                            document.getElementById("VACAC_PCT").innerText = "(2,323 acres city-wide)";
                             document.getElementById("GHG").innerText = numberWithCommas(results.features[0].attributes.GHG);
-                            document.getElementById("GHG_City").innerText = "(" + numberWithCommas(results.features[0].attributes.GHG_City).toString() + " Pittsburgh average)";
+                            document.getElementById("GHG_City").innerText = "(" + numberWithCommas(results.features[0].attributes.GHG_City).toString() + " Pittsburgh Average)";
 
                             // Update the neighborhood description
                             var context = results.features[0].attributes.CONTEXT;
@@ -233,6 +233,12 @@ function drawChart() {
 
     var options = {
 		legend: {position: 'none'},
+		pieSliceTextStyle: {
+            color: 'black',
+			fontName: "Arial",
+			fontSize: 15,
+          },
+		backgroundColor: { fill: "#f2f2f2" },
         titleTextStyle: {
             color: "black",
             fontName: "Arial",
