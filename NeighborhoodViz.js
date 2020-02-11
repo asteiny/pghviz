@@ -66,12 +66,11 @@ require([
 		
 		// Get the neighborhood specified in the URL and select it in the dropdown
 
-        var nhood = getParameterByName('nhood').replace(/"/g, '');
+        var nhood = getParameterByName('nhood')
 
         if (nhood != null) {
 
-            document.getElementById("dropdownSelect").value = nhood;
-			document.getElementById("demo").innerHTML = nhood;
+            document.getElementById("dropdownSelect").value = nhood.replace(/"/g, '');
 		}
 
         // Show the first neighborhood in the list
