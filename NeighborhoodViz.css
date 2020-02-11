@@ -8,7 +8,7 @@ body {
 
 h1 { font-family: "Open Sans"; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; text-align: center; margin:auto;} 
 h3 { font-family: "Open Sans"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } 
-p { font-family: "Open Sans"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } 
+p { font-family: "Open Sans"; font-size: 11px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 24px; } 
 blockquote { font-family: "Open Sans"; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } 
 pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
 
@@ -169,16 +169,22 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
     }
 
 .demographicsCell {
-    padding: 10px;
+    padding: 0px;
     float: left;
-    width: 15vw;
+    width: calc(((100% - 12px)/5));
     border: solid 1px #e09641;
 }
 
 .demographicsTitle {
     white-space: nowrap;
     margin: 2px;
-    font-size: 1.75vw;
+    font-family: "Open Sans"; 
+	font-size: 1.2vw; 
+	font-style: normal; 
+	font-variant: normal; 
+	font-weight: 700; 
+	line-height: 15.4px;
+	text-align: center;
 }
 
 .demographicsValue {

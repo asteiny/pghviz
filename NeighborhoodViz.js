@@ -34,7 +34,7 @@ require([
 
     // Query the neighborhood layer to get the list of neighborhood names and Ids and add them to the dropdown list
     var queryTask = new QueryTask({
-        url: "https://services9.arcgis.com/r2aSdvRtDKoaZzPC/arcgis/rest/services/Pittsburgh_Neighborhood_Database_GDB/FeatureServer/0"
+        url: "https://services9.arcgis.com/r2aSdvRtDKoaZzPC/arcgis/rest/services/Pittsburgh_Neighborhood_Database/FeatureServer/0"
     });
     var query = new Query();
     query.returnGeometry = false;
@@ -113,7 +113,7 @@ require([
         // Create the neighborhood layer
         featureLayer = new FeatureLayer({
             title: "Neighborhood",
-            url: "https://services9.arcgis.com/r2aSdvRtDKoaZzPC/arcgis/rest/services/Pittsburgh_Neighborhood_Database_GDB/FeatureServer/0",
+            url: "https://services9.arcgis.com/r2aSdvRtDKoaZzPC/arcgis/rest/services/Pittsburgh_Neighborhood_Database/FeatureServer/0",
             outFields: ["SqMi", "SqMi_Pct", "POP_17", "POP_PCT_CI", "EMP_17", "EMP_PCT_CI", "HU_17", "HU_PCT_CIT", "HHI_17", "HHI_CITYAV", "NAUTO_MODE", "AUTO_CITYA", "RCOSTB_PT", "OCOSTB_CIT", "WID_Norm", "WID_city", "VACAC_N", "VACAC_PCT", "GHG", "GHG_City", "CONTEXT", "LU_COM", "LU_RES", "LU_PUB", "LU_IND", "LU_OS", "LU_VAC", "LU_OTH", "LU_MU"],
             renderer: neighborhoodRenderer,
             definitionExpression: "hood = '" + neighborhoodIdStr + "'"
@@ -233,7 +233,6 @@ function drawChart() {
 
     var options = {
 		legend: {position: 'none'},
-        title: 'Land Area Mix',
         titleTextStyle: {
             color: "black",
             fontName: "Arial",
