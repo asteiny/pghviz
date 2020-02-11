@@ -163,17 +163,22 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
     width: calc(100% - 12px);
     /*border: solid 1px #e09641;*/
 }
-    #demographicsDiv .demographicsCell:nth-of-type(odd) {
+   /* #demographicsDiv .demographicsCell:nth-of-type(odd) {
         background-color: #f2f2f2;
-    }
+    } */
 
 .demographicsCell {
+	background-color: #f2f2f2;
     padding: 0px;
 	margin:1px;
-	margin-top:15px;
     float: left;
     width: calc(((100% - 10.5px)/5));
     /*border: solid 1px #e09641;*/
+}
+
+.demographicsCell:hover {
+background-color: #3e8e41;
+  color: white;	
 }
 
 .demographicsTitle {
@@ -201,6 +206,7 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
 .cityValue {
     white-space: pre;
     margin: 2px;
+	margin-bottom: 15px;
     font-size: 1.25vw;
 	text-align: center;
 	margin-top:10px;
