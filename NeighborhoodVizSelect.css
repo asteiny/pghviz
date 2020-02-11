@@ -1,0 +1,65 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+h1 { font-family: "Open Sans"; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; text-align: center; margin:auto;} 
+h3 { font-family: "Open Sans"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } 
+p { font-family: "Open Sans"; font-size: 11px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 24px; } 
+blockquote { font-family: "Open Sans"; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } 
+pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+
+#dropdownDiv {
+    padding: 0px;
+    margin-top: 350px;
+    height: 5%;
+	color: #000000;
+    text-align: center;
+	font-family: "Open Sans"; 
+	font-size: 12px; 
+	font-style: normal; 
+	font-variant: normal; 
+	font-weight: 700; 
+	line-height: 35.4px;
+    font-size: 2.5vh;
+}
+   
+#dropdownSelectNhood {
+    background-color: #2699fb;
+    font-family: "Open Sans"; 
+	font-size: 12px; 
+	color: white;
+	font-style: normal; 
+	font-variant: normal; 
+	font-weight: 700; 
+	line-height: 15.4px;
+    font-size: 2.5vh;
+    border: solid 2px #ffffff;
+	border-radius: 6px;
+    height: 90%;
+	Margin-top:2px;
+	width:
+}
+
+#dropdownSelectNhood:hover {
+	box-shadow: 2px 2px 5px grey;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border-radius:6px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Open Sans"; 
+  font-size: 16px;
+  border: 2px solid white;
+}
+.button:hover {
+  box-shadow: 2px 2px 5px grey;
+}
