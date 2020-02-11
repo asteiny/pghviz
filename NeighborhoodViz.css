@@ -50,9 +50,10 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
 	line-height: 15.4px;
     font-size: 2.5vh;
     border: solid 2px #ffffff;
-	border-radius: 10px;
+	border-radius: 6px;
     height: 90%;
 	Margin-top:2px;
+	
 }
 
 #mapChartDiv {
