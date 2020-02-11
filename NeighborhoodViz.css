@@ -60,7 +60,7 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
     margin-right: 2px;
     height: 100%;
     width: 60%;
-    border: solid 1px #e09641;
+    /*border: solid 1px #e09641;*/
 }
 
 #mapTitle {
@@ -134,16 +134,15 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
     margin-left: 3px;
     height: 100%;
     width: calc(40% - 9px);
-    border: solid 1px #e09641;
+    /*border: solid 1px #e09641;*/
 }
 
 #aboutDiv {
     padding: 5px;
     margin: 5px;
-    overflow-y: auto;
-    height: 23%;
+    
     width: calc(100% - 22px);
-    border: solid 1px #e09641;
+    /*border: solid 1px #e09641;*/
 }
 
     #aboutDiv p {
@@ -162,7 +161,7 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
     float: left;
     /*height: calc(27% - 40px);*/
     width: calc(100% - 12px);
-    border: solid 1px #e09641;
+    /*border: solid 1px #e09641;*/
 }
     #demographicsDiv .demographicsCell:nth-of-type(odd) {
         background-color: #f2f2f2;
@@ -170,16 +169,18 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
 
 .demographicsCell {
     padding: 0px;
+	margin:1px;
+	margin-top:15px;
     float: left;
-    width: calc(((100% - 12px)/5));
-    border: solid 1px #e09641;
+    width: calc(((100% - 10.5px)/5));
+    /*border: solid 1px #e09641;*/
 }
 
 .demographicsTitle {
     white-space: nowrap;
-    margin: 2px;
+    margin-top: 5px;
     font-family: "Open Sans"; 
-	font-size: 1.2vw; 
+	font-size: 1.5vw; 
 	font-style: normal; 
 	font-variant: normal; 
 	font-weight: 700; 
@@ -188,10 +189,24 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
 }
 
 .demographicsValue {
-    white-space: nowrap;
+    white-space: pre;
+    margin: 2px;
+    font-size: 3vw;
+	text-align: center;
+	font-weight: 700;
+	margin-top:10px;
+	font-family: "Open Sans";
+}
+
+.cityValue {
+    white-space: pre;
     margin: 2px;
     font-size: 1.25vw;
+	text-align: center;
+	margin-top:10px;
+	font-family: "Open Sans";
 }
+
 
 #context {
     font-size: 2.2vh;

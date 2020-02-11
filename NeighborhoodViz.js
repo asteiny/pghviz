@@ -149,7 +149,7 @@ require([
                             isNewNeighborhood = false;
 
                             // Update the metrics
-                            document.getElementById("SqMi").innerText = numberWithCommas(results.features[0].attributes.SqMi) + " Square Miles";
+                            document.getElementById("SqMi").innerText = numberWithCommas(results.features[0].attributes.SqMi) + " Sqmi";
                             document.getElementById("SqMi_Pct").innerText = "(" + (results.features[0].attributes.SqMi_Pct * 100).toFixed(2).toString() + "% of Pittsburgh)";
                             document.getElementById("POP_17").innerText = numberWithCommas(results.features[0].attributes.POP_17);
                             document.getElementById("POP_PCT_CI").innerText = "(" + results.features[0].attributes.POP_PCT_CI + "% of Pittsburgh)";
@@ -163,11 +163,11 @@ require([
                             document.getElementById("AUTO_CITYA").innerText = "(" + numberWithCommas(results.features[0].attributes.AUTO_CITYA).toString() + "% citywide)";
                             document.getElementById("RCOSTB_PT").innerText = numberWithCommas(results.features[0].attributes.RCOSTB_PT) + "%";
                             document.getElementById("OCOSTB_CIT").innerText = "(" + numberWithCommas(results.features[0].attributes.OCOSTB_CIT).toString() + "% citywide)";
-                            document.getElementById("WID_Norm").innerText = numberWithCommas(results.features[0].attributes.WID_Norm) + " (Ints./square mile)";
+                            document.getElementById("WID_Norm").innerText = numberWithCommas(results.features[0].attributes.WID_Norm);
                             document.getElementById("WID_city").innerText = "(" + numberWithCommas(results.features[0].attributes.WID_city).toString() + " Pittsburgh average)";
                             document.getElementById("VACAC_N").innerText = numberWithCommas(results.features[0].attributes.VACAC_N.toFixed(2)).toString() + " (acres)";
                             document.getElementById("VACAC_PCT").innerText = "(" + numberWithCommas(results.features[0].attributes.VACAC_PCT.toFixed(4)).toString() + "% of city vacant land)";
-                            document.getElementById("GHG").innerText = numberWithCommas(results.features[0].attributes.GHG) + " (emissions per capita)";
+                            document.getElementById("GHG").innerText = numberWithCommas(results.features[0].attributes.GHG);
                             document.getElementById("GHG_City").innerText = "(" + numberWithCommas(results.features[0].attributes.GHG_City).toString() + " Pittsburgh average)";
 
                             // Update the neighborhood description
