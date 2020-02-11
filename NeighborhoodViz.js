@@ -232,6 +232,7 @@ function drawChart() {
     NumberFormat.format(data, 1); // Apply formatter to second column
 
     var options = {
+		legend: {position: 'none'},
         title: 'Land Area Mix',
         titleTextStyle: {
             color: "black",
