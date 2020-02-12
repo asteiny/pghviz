@@ -238,6 +238,8 @@ background-color: #2699fb;
     top: -30px;
     z-index: 1;
     font-size: smaller;
+	/* multi-line tooltip text changed to block.  causes Divs to overflow... */
+	display:inline-block;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
