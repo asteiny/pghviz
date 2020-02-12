@@ -222,7 +222,26 @@ background-color: #2699fb;
 	font-family: "Open Sans";
 }
 
-
 #context {
     font-size: 2.2vh;
+}
+
+.demoTooltiptext {
+    visibility: hidden;
+    width: 130px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 2px 6px;
+    border-radius: 6px;
+    border: solid 1px;
+    position: relative;
+    top: -20px;
+    z-index: 1;
+    font-size: smaller;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.demographicsCell:hover .demoTooltiptext {
+    visibility: visible;
 }
