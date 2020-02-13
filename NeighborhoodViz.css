@@ -12,6 +12,19 @@ p { font-family: "Open Sans"; font-size: 11px; font-style: normal; font-variant:
 blockquote { font-family: "Open Sans"; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } 
 pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
 
+#lutitleDiv {
+    padding-left: 5px;
+    height: 5%;
+	background: #f2f2f2;
+	margin-left: 5px;
+	margin-right: 5px;
+	line-height: 4.5vh;
+	font-size: 3.5vh;
+    font-weight: bold;
+	font-family: "Open Sans"
+}
+
+
 
 #dropdownDiv {
     padding: 0px;
@@ -83,13 +96,13 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
 	font-family: "Open Sans";
     position: absolute;
     width: 105px;
-    left: calc(60% - 120px);
-    top: calc(8vh + 27px);
+    left: calc(100vw - 180px);
+    top: calc(7.5vh + 27px);
     color: #323232;
     background-color: #f2f2f2;
     font-size: 12px;
     display: none;
-    
+    z-index:10;
     border-radius: 6px;
     padding: 3px;
 }
@@ -104,8 +117,8 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
 	font-family: "Open Sans";
     position: absolute;
     width: 105px;
-    left: calc(60% - 120px);
-    top: 8vh;
+    left: calc(100vw - 180px);
+    top: 7.5vh;
     color: white;
     background-color:  #2699fb;
     font-size: 12px;
@@ -125,10 +138,9 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
         text-align: center;
         padding: 2px;
         border-radius: 6px;
-     
         position: absolute;
         z-index: 1;
-        left: calc(60% + 48px);
+        left: calc(90% - 235px);
         font-size:smaller;
     }
 
@@ -142,7 +154,7 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
     padding: 0px;
     margin-left: 3px;
     height: 100%;
-    width: calc(40% - 9px);
+    width: calc(40% - 5px);
     /*border: solid 1px #e09641;*/
 }
 
@@ -159,8 +171,9 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
     }
 
 .aboutTitle {
-    font-size: 28px;
+    font-size: 3.5vh;
     font-weight: bold;
+	line-height: 4vh;
 }
 
 #demographicsDiv {
