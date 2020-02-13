@@ -117,7 +117,7 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
 	font-family: "Open Sans";
     position: absolute;
     width: 105px;
-    left: calc(100vw - 180px);
+    left: calc(95vw - 120px);
     top: 7.5vh;
     color: white;
     background-color:  #2699fb;
