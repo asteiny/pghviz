@@ -12,9 +12,19 @@ p { font-family: "Open Sans"; font-size: 11px; font-style: normal; font-variant:
 blockquote { font-family: "Open Sans"; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } 
 pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
 
+#bgDiv{
+background-image:url('bgimg.jpg');
+position:absolute;
+opacity: 0.35;
+height: 100%;
+overflow: hidden;
+width: 100%;
+z-index: -1;
+
+}
+
 #dropdownDiv {
-    padding: 0px;
-    margin-top: 350px;
+    padding-top: 30vh;
     height: 5%;
 	color: #000000;
     text-align: center;
@@ -25,6 +35,7 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
 	font-weight: 700; 
 	line-height: 35.4px;
     font-size: 2.5vh;
+	height: 5vh;
 }
    
 #dropdownSelectNhood {
@@ -41,7 +52,7 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
 	border-radius: 6px;
     height: 90%;
 	Margin-top:2px;
-	width:
+	
 }
 
 #dropdownSelectNhood:hover {
@@ -52,13 +63,14 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
   background-color: #4CAF50; /* Green */
   border-radius:6px;
   color: white;
-  padding: 15px 32px;
+  padding: 2vh;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-family: "Open Sans"; 
-  font-size: 16px;
+  font-size: 1.5vh;
   border: 2px solid white;
+
 }
 .button:hover {
   box-shadow: 2px 2px 5px grey;
