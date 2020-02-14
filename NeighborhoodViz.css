@@ -69,12 +69,14 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
 	
 }
 
+
 #mapChartDiv {
     padding: 0px;
     margin: 5px;
     height: 40%;
 }
 
+@media only screen and (max-width: 10000px) {
 #mapDiv {
     float: left;
     padding: 0px;
@@ -82,6 +84,19 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
     height: 100%;
     width: 60%;
     /*border: solid 1px #e09641;*/
+}
+}
+
+@media only screen and (max-width: 650px) {
+#mapDiv {
+    float: left;
+    padding: 0px;
+    margin-right: 2px;
+    height: 100%;
+    width: 100%;
+    /*border: solid 1px #e09641;*/
+	margin-bottom: 5px;
+}
 }
 
 #mapTitle {
@@ -149,6 +164,7 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
         visibility: visible;
     }
 
+@media only screen and (max-width: 10000px) {
 #chartDiv {
     float: left;
     padding: 0px;
@@ -156,6 +172,19 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
     height: 100%;
     width: calc(40% - 5px);
     /*border: solid 1px #e09641;*/
+}
+}
+
+@media only screen and (max-width: 650px) {
+#chartDiv {
+    float: left;
+    padding: 0px;
+    margin-left: 3px;
+    height: 100%;
+    width: 100%;
+    /*border: solid 1px #e09641;*/
+	margin-bottom: 5px;
+}
 }
 
 #aboutDiv {
@@ -189,6 +218,7 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
         background-color: #f2f2f2;
     } */
 
+@media only screen and (max-width: 10000px) {
 .demographicsCell {
 	background-color: #f2f2f2;
     position: relative;
@@ -198,12 +228,26 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
     width: calc(((100% - 10.5px)/5));
     /*border: solid 1px #e09641;*/
 }
+}
+
+@media only screen and (max-width: 650px) {
+.demographicsCell {
+	background-color: #f2f2f2;
+    position: relative;
+    padding: 0px;
+	margin:1px;
+    float: left;
+    width: calc(((100% - 10.5px)));
+    /*border: solid 1px #e09641;*/
+}
+}
 
 .demographicsCell:hover {
 background-color: #2699fb;
   color: white;	
 }
 
+@media only screen and (max-width: 10000px) {
 .demographicsTitle {
     white-space: nowrap;
     margin-top: 1vw;
@@ -215,7 +259,23 @@ background-color: #2699fb;
 	line-height: 15.4px;
 	text-align: center;
 }
+}
 
+@media only screen and (max-width: 650px) {
+.demographicsTitle {
+    white-space: nowrap;
+    margin-top: 1vw;
+    font-family: "Open Sans"; 
+	font-size: 2.5vw; 
+	font-style: normal; 
+	font-variant: normal; 
+	font-weight: 700; 
+	line-height: 15.4px;
+	text-align: center;
+}
+}
+
+@media only screen and (max-width: 10000px) {
 .demographicsValue {
     white-space: pre;
     margin: 2px;
@@ -225,7 +285,21 @@ background-color: #2699fb;
 	margin-top:10px;
 	font-family: "Open Sans";
 }
+}
 
+@media only screen and (max-width: 650px) {
+.demographicsValue {
+    white-space: pre;
+    margin: 2px;
+    font-size: 4vw;
+	text-align: center;
+	font-weight: 700;
+	margin-top:10px;
+	font-family: "Open Sans";
+}
+}
+
+@media only screen and (max-width: 10000px) {
 .cityValue {
     white-space: pre;
     margin: 2px;
@@ -235,9 +309,30 @@ background-color: #2699fb;
 	margin-top:10px;
 	font-family: "Open Sans";
 }
+}
 
+@media only screen and (max-width: 650px) {
+.cityValue {
+    white-space: pre;
+    margin: 2px;
+	margin-bottom: 15px;
+    font-size: 2.5vw;
+	text-align: center;
+	margin-top:10px;
+	font-family: "Open Sans";
+}
+}
+
+@media only screen and (max-width: 10000px) {
 #context {
-    font-size: 2.2vh;
+    font-size: calc(.9vw + 5px);
+}
+}
+
+@media only screen and (max-width: 650px) {
+#context {
+    font-size: calc(1.3vw + 5px);
+}
 }
 
 .demoTooltiptext {
