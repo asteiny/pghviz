@@ -228,9 +228,9 @@ function drawChart() {
         ['Commercial', chartData[0]],
         ['Industrial', chartData[1]],
         ['Mixed Use', chartData[2]],
-        ['Open Space', chartData[3]],
+        ['Rec./Open Space', chartData[3]],
         ['Other', chartData[4]],
-        ['Public/Quasi Public', chartData[5]],
+        ['Institutional', chartData[5]],
         ['Residential', chartData[6]],
         ['Vacant', chartData[7]]
     ]);
