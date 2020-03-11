@@ -6,11 +6,11 @@ body {
     height: calc(100% - 16px);
 }
 
-h1 { font-family: "Open Sans"; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; text-align: center; margin:auto;} 
-h3 { font-family: "Open Sans"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } 
-p { font-family: "Open Sans"; font-size: 11px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 24px; } 
-blockquote { font-family: "Open Sans"; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } 
-pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+h1 { font-family: "Libra Franklin"; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; text-align: center; margin:auto;} 
+h3 { font-family: "Libra Franklin"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } 
+p { font-family: "Libra Franklin"; font-size: 11px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 24px; } 
+blockquote { font-family: "Libra Franklin"; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } 
+pre { font-family: "Libra Franklin"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
 
 #lutitleDiv {
     padding-left: 5px;
@@ -21,7 +21,7 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
 	line-height: 4.5vh;
 	font-size: 3.5vh;
     font-weight: bold;
-	font-family: "Open Sans"
+	font-family: "Libra Franklin"
 }
 
 
@@ -54,7 +54,7 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
 
 #dropdownSelect {
     background-color: #2699fb;
-    font-family: "Open Sans"; 
+    font-family: "Libra Franklin"; 
 	font-size: 12px; 
 	color: white;
 	font-style: normal; 
@@ -108,7 +108,7 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
 }
 
 #legend {
-	font-family: "Open Sans";
+	font-family: "Libra Franklin";
     position: absolute;
     width: 115px;
     left: calc(95vw - 130px);
@@ -129,7 +129,7 @@ pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-varian
 }
 
 #legendToggle {
-	font-family: "Open Sans";
+	font-family: "Libra Franklin";
     position: absolute;
     width: 115px;
     left: calc(95vw - 130px);
@@ -251,7 +251,7 @@ background-color: #2699fb;
 .demographicsTitle {
     white-space: nowrap;
     margin-top: 1vw;
-    font-family: "Open Sans"; 
+    font-family: "Libra Franklin"; 
 	font-size: 1.5vw; 
 	font-style: normal; 
 	font-variant: normal; 
@@ -265,7 +265,7 @@ background-color: #2699fb;
 .demographicsTitle {
     white-space: nowrap;
     margin-top: 1vw;
-    font-family: "Open Sans"; 
+    font-family: "Libra Franklin"; 
 	font-size: 2.5vw; 
 	font-style: normal; 
 	font-variant: normal; 
@@ -283,7 +283,7 @@ background-color: #2699fb;
 	text-align: center;
 	font-weight: 700;
 	margin-top:10px;
-	font-family: "Open Sans";
+	font-family: "Libra Franklin";
 }
 }
 
@@ -295,7 +295,7 @@ background-color: #2699fb;
 	text-align: center;
 	font-weight: 700;
 	margin-top:10px;
-	font-family: "Open Sans";
+	font-family: "Libra Franklin";
 }
 }
 
@@ -307,7 +307,7 @@ background-color: #2699fb;
     font-size: 1.25vw;
 	text-align: center;
 	margin-top:10px;
-	font-family: "Open Sans";
+	font-family: "Libra Franklin";
 }
 }
 
@@ -319,7 +319,7 @@ background-color: #2699fb;
     font-size: 2.5vw;
 	text-align: center;
 	margin-top:10px;
-	font-family: "Open Sans";
+	font-family: "Libra Franklin";
 }
 }
 
@@ -347,7 +347,7 @@ background-color: #2699fb;
     font-size: smaller;
 	opacity: 0;
     transition: opacity .5s;
-	font-family: "Open Sans"
+	font-family: "Libra Franklin"
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
