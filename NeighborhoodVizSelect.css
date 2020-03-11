@@ -6,11 +6,11 @@ body {
     height: 100%;
 }
 
-h1 { font-family: "Open Sans"; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; text-align: center; margin:auto;} 
-h3 { font-family: "Open Sans"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } 
-p { font-family: "Open Sans"; font-size: 11px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 24px; } 
-blockquote { font-family: "Open Sans"; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } 
-pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+h1 { font-family: "Libre Franklin"; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; text-align: center; margin:auto;} 
+h3 { font-family: "Libre Franklin"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } 
+p { font-family: "Libre Franklin"; font-size: 11px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 24px; } 
+blockquote { font-family: "Libre Franklin"; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } 
+pre { font-family: "Libre Franklin"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
 
 #bgDiv{
 background-image:url('bgimg.jpg');
@@ -28,7 +28,7 @@ z-index: -1;
     height: 5%;
 	color: #000000;
     text-align: center;
-	font-family: "Open Sans"; 
+	font-family: "Libre Franklin"; 
 	font-size: 12px; 
 	font-style: normal; 
 	font-variant: normal; 
@@ -40,7 +40,7 @@ z-index: -1;
    
 #dropdownSelectNhood {
     background-color: #2699fb;
-    font-family: "Open Sans"; 
+    font-family: "Libre Franklin"; 
 	font-size: 12px; 
 	color: white;
 	font-style: normal; 
@@ -67,7 +67,7 @@ z-index: -1;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-family: "Open Sans"; 
+  font-family: "Libre Franklin"; 
   font-size: 16px;
   border: 2px solid white;
 
