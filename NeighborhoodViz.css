@@ -30,7 +30,7 @@ pre { font-family: "Libre Franklin"; font-size: 13px; font-style: normal; font-v
     padding: 0px;
     margin: 5px;
     height: 5%;
-    background-color: #2699fb;
+    background-color: #0f2a70;
     text-align: center;
 }
     #dropdownDiv .tooltiptext {
@@ -53,7 +53,7 @@ pre { font-family: "Libre Franklin"; font-size: 13px; font-style: normal; font-v
     }
 
 #dropdownSelect {
-    background-color: #2699fb;
+    background-color: #0f2a70;
     font-family: "Libre Franklin"; 
 	font-size: 12px; 
 	color: white;
@@ -135,7 +135,7 @@ pre { font-family: "Libre Franklin"; font-size: 13px; font-style: normal; font-v
     left: calc(95vw - 130px);
     top: 7.5vh;
     color: white;
-    background-color:  #2699fb;
+    background-color:  #0f2a70;
     font-size: 12px;
     display: block;
     border-radius: 6px;
@@ -243,7 +243,7 @@ pre { font-family: "Libre Franklin"; font-size: 13px; font-style: normal; font-v
 }
 
 .demographicsCell:hover {
-background-color: #2699fb;
+background-color: #0f2a70;
   color: white;	
 }
 
