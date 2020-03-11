@@ -12,6 +12,7 @@ p { font-family: "Libre Franklin"; font-size: 11px; font-style: normal; font-var
 blockquote { font-family: "Libre Franklin"; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } 
 pre { font-family: "Libre Franklin"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
 
+@media only screen and (max-width: 10000px) {
 #lutitleDiv {
     padding-left: 5px;
     height: 5%;
@@ -23,7 +24,21 @@ pre { font-family: "Libre Franklin"; font-size: 13px; font-style: normal; font-v
     font-weight: bold;
 	font-family: "Libre Franklin"
 }
+}
 
+@media only screen and (max-width: 650px) {
+#lutitleDiv {
+    padding-left: 5px;
+    height: 5%;
+	background: #f2f2f2;
+	margin-left: 5px;
+	margin-right: 5px;
+	line-height: 4.5vh;
+	font-size: 3.5vw;
+    font-weight: bold;
+	font-family: "Libre Franklin"
+}
+}
 
 
 #dropdownDiv {
@@ -199,11 +214,22 @@ pre { font-family: "Libre Franklin"; font-size: 13px; font-style: normal; font-v
         margin: 5px;
     }
 
+@media only screen and (max-width: 10000px) {
 .aboutTitle {
     font-size: 3.5vh;
     font-weight: bold;
 	line-height: 4vh;
 }
+}
+
+@media only screen and (max-width: 650px) {
+.aboutTitle {
+    font-size: 3.5vw;
+    font-weight: bold;
+	line-height: 4vh;
+}
+}
+
 
 #demographicsDiv {
     padding: 0px;
