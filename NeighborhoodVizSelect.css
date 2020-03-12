@@ -13,9 +13,8 @@ blockquote { font-family: "Libre Franklin"; font-size: 21px; font-style: normal;
 pre { font-family: "Libre Franklin"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
 
 #bgDiv{
-background-image:url('bgimg.jpg');
+background-image:url('bgimg.png');
 position:absolute;
-opacity: 0.35;
 height: 100%;
 overflow: hidden;
 width: 100%;
@@ -26,7 +25,7 @@ z-index: -1;
 #dropdownDiv {
     padding-top: 30vh;
     height: 5%;
-	color: #000000;
+	color: #ffffff;
     text-align: center;
 	font-family: "Libre Franklin"; 
 	font-size: 12px; 
@@ -37,18 +36,29 @@ z-index: -1;
     font-size: 2.5vh;
 	height: 5vh;
 }
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#logoDiv {
+	text-align: center; 
+	height: 7vh;
+	padding-bottom: 4vh;
+}
    
 #dropdownSelectNhood {
-    background-color: #2699fb;
+    background-color: #ffffff;
     font-family: "Libre Franklin"; 
 	font-size: 12px; 
-	color: white;
+	color: #f2a70;
 	font-style: normal; 
 	font-variant: normal; 
 	font-weight: 700; 
 	line-height: 15.4px;
     font-size: 2.5vh;
-    border: solid 2px #ffffff;
+    border: solid 2px #0f2a70;
 	border-radius: 6px;
     height: 90%;
 	Margin-top:2px;
@@ -60,16 +70,16 @@ z-index: -1;
 }
 
 .button {
-  background-color: #4CAF50; /* Green */
+  background-color: #bbe5f1; 
   border-radius:6px;
-  color: white;
-  padding: 2vh;
+  color: #0f2a70;
+  padding: 1vh;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-family: "Libre Franklin"; 
   font-size: 16px;
-  border: 2px solid white;
+  border: 2px solid #0f2a70;
 
 }
 .button:hover {
