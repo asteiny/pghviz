@@ -170,7 +170,7 @@ pre { font-family: "Libre Franklin"; font-size: 13px; font-style: normal; font-v
         border-radius: 6px;
         position: absolute;
         z-index: 1;
-        left: calc(90% - 305px);
+        left: calc(90% - 290px);
         font-size:smaller;
     }
 
