@@ -122,8 +122,8 @@ require([
         // Create the neighborhood layer
         featureLayer = new FeatureLayer({
             title: "Neighborhood",
-            url: "https://services9.arcgis.com/r2aSdvRtDKoaZzPC/arcgis/rest/services/PGH_Neighborhood_Database_Updated_LU_2/FeatureServer",
-            outFields: ["SqMi", "SqMi_Pct", "POP_17", "POP_PCT_CI", "EMP_17", "EMP_PCT_CI", "HU_17", "HU_PCT_CIT", "HHI_17", "HHI_CITYAV", "NAUTO_MODE", "AUTO_CITYA", "RCOSTB_PT", "OCOSTB_CIT", "WID_Norm", "WID_city", "VACAC_N", "VACAC_PCT", "GHG", "GHG_City", "CONTEXT_1", "Commercial", "Industrial", "Institutional", "Mixed_Use", "Other", "Parks__Open_Space", "Residential", "Residential_Multifamily","Transportation__Utilities", "Vacant_1"],
+            url: "https://services9.arcgis.com/r2aSdvRtDKoaZzPC/arcgis/rest/services/PGH_Neighborhood_Database_Updated_LU_3/FeatureServer",
+            outFields: ["SqMi", "SqMi_Pct", "POP_17", "POP_PCT_CI", "EMP_17", "EMP_PCT_CI", "HU_17", "HU_PCT_CIT", "HHI_17", "HHI_CITYAV", "NAUTO_MODE", "AUTO_CITYA", "RCOSTB_PT", "OCOSTB_CIT", "WID_Norm", "WID_city", "VACAC_N", "VACAC_PCT", "GHG", "GHG_City", "Description", "Commercial", "Industrial", "Institutional", "Mixed_Use", "Other", "Parks__Open_Space", "Residential", "Residential_Multifamily","Transportation__Utilities", "Vacant_1"],
             renderer: neighborhoodRenderer,
             definitionExpression: "hood = '" + neighborhoodIdStr + "'"
         });
@@ -180,7 +180,7 @@ require([
                             document.getElementById("GHG_City").innerText = "(" + numberWithCommas(results.features[0].attributes.GHG_City).toString() + " Pittsburgh Average)";
 
                             // Update the neighborhood description
-                            var context = results.features[0].attributes.CONTEXT;
+                            var context = results.features[0].attributes.Description;
                             if (context == "" || context == null) { context = "No information available about this neighborhood." }
                             document.getElementById("context").innerText = context;
 
