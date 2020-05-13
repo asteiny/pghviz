@@ -126,7 +126,7 @@ pre { font-family: "Libre Franklin"; font-size: 13px; font-style: normal; font-v
 	font-family: "Libre Franklin";
     position: absolute;
     width: 150px;
-    left: calc(95vw - 130px);
+    left: calc(95vw - 160px);
     top: calc(7.5vh + 27px);
     color: #323232;
     background-color: #f2f2f2;
@@ -147,7 +147,7 @@ pre { font-family: "Libre Franklin"; font-size: 13px; font-style: normal; font-v
 	font-family: "Libre Franklin";
     position: absolute;
     width: 150px;
-    left: calc(95vw - 130px);
+    left: calc(95vw - 160px);
     top: 7.5vh;
     color: white;
     background-color:  #0f2a70;
@@ -170,7 +170,7 @@ pre { font-family: "Libre Franklin"; font-size: 13px; font-style: normal; font-v
         border-radius: 6px;
         position: absolute;
         z-index: 1;
-        left: calc(90% - 265px);
+        left: calc(90% - 285px);
         font-size:smaller;
     }
 
