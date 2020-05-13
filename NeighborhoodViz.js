@@ -99,7 +99,7 @@ require([
         // Create the parcels layer
         var featureLayer = new FeatureLayer({
             title: "Parcels",
-            url: "https://services9.arcgis.com/r2aSdvRtDKoaZzPC/arcgis/rest/services/Parcels/FeatureServer",
+            url: "https://services9.arcgis.com/r2aSdvRtDKoaZzPC/ArcGIS/rest/services/Pittsburgh_Land_Use_by_Parcel/FeatureServer",
             outFields: ["NHood"],
             definitionExpression: "NHood = '" + neighborhoodIdStr + "'"
         });
@@ -122,8 +122,8 @@ require([
         // Create the neighborhood layer
         featureLayer = new FeatureLayer({
             title: "Neighborhood",
-            url: "https://services9.arcgis.com/r2aSdvRtDKoaZzPC/arcgis/rest/services/Pittsburgh_Neighborhood_Database/FeatureServer/0",
-            outFields: ["SqMi", "SqMi_Pct", "POP_17", "POP_PCT_CI", "EMP_17", "EMP_PCT_CI", "HU_17", "HU_PCT_CIT", "HHI_17", "HHI_CITYAV", "NAUTO_MODE", "AUTO_CITYA", "RCOSTB_PT", "OCOSTB_CIT", "WID_Norm", "WID_city", "VACAC_N", "VACAC_PCT", "GHG", "GHG_City", "CONTEXT", "LU_COM", "LU_RES", "LU_PUB", "LU_IND", "LU_OS", "LU_VAC", "LU_OTH", "LU_MU"],
+            url: "https://services9.arcgis.com/r2aSdvRtDKoaZzPC/arcgis/rest/services/PGH_Neighborhood_Database_Updated_LU/FeatureServer",
+            outFields: ["SqMi", "SqMi_Pct", "POP_17", "POP_PCT_CI", "EMP_17", "EMP_PCT_CI", "HU_17", "HU_PCT_CIT", "HHI_17", "HHI_CITYAV", "NAUTO_MODE", "AUTO_CITYA", "RCOSTB_PT", "OCOSTB_CIT", "WID_Norm", "WID_city", "VACAC_N", "VACAC_PCT", "GHG", "GHG_City", "CONTEXT", "Commercial", "Industrial", "Institutional", "Mixed_Use", "Other", "Parks__Open_Space", "Residential", "Residential_Multifamily","Transportation__Utilities", "Vacant_1"],
             renderer: neighborhoodRenderer,
             definitionExpression: "hood = '" + neighborhoodIdStr + "'"
         });
@@ -186,14 +186,16 @@ require([
 
                             // Create the chart
                             chartData = [];
-                            chartData.push(parseFloat(results.features[0].attributes.LU_COM));
-                            chartData.push(parseFloat(results.features[0].attributes.LU_IND));
-                            chartData.push(parseFloat(results.features[0].attributes.LU_MU));
-                            chartData.push(parseFloat(results.features[0].attributes.LU_OS));
-                            chartData.push(parseFloat(results.features[0].attributes.LU_OTH));
-                            chartData.push(parseFloat(results.features[0].attributes.LU_PUB));
-                            chartData.push(parseFloat(results.features[0].attributes.LU_RES));
-                            chartData.push(parseFloat(results.features[0].attributes.LU_VAC));
+                            chartData.push(parseFloat(results.features[0].attributes.Commercial));
+                            chartData.push(parseFloat(results.features[0].attributes.Industrial));
+                            chartData.push(parseFloat(results.features[0].attributes.Institutional));
+                            chartData.push(parseFloat(results.features[0].attributes.Mixed_Use));
+                            chartData.push(parseFloat(results.features[0].attributes.Other));
+                            chartData.push(parseFloat(results.features[0].attributes.Parks__Open_Space));
+                            chartData.push(parseFloat(results.features[0].attributes.Residential));
+                            chartData.push(parseFloat(results.features[0].attributes.Residential_Multifamily));
+							chartData.push(parseFloat(results.features[0].attributes.Transportation__Utilities));
+							chartData.push(parseFloat(results.features[0].attributes.Vacant_1));
                             drawChart();
                         });
                     }
@@ -227,12 +229,14 @@ function drawChart() {
         ['Type', 'Total'],
         ['Commercial', chartData[0]],
         ['Industrial', chartData[1]],
-        ['Mixed Use', chartData[2]],
-        ['Rec./Open Space', chartData[3]],
+        ['Institutional', chartData[2]],
+        ['Mixed Use', chartData[3]],
         ['Other', chartData[4]],
-        ['Institutional', chartData[5]],
-        ['Residential', chartData[6]],
-        ['Vacant', chartData[7]]
+        ['Parks/ Open Space', chartData[5]],
+        ['Residential-1,2 and 3 Family', chartData[6]],
+		['Residential-Multifamily', chartData[7]],
+		['Transportation / Utilities', chartData[8]],
+        ['Vacant', chartData[9]]
     ]);
 
     var NumberFormat = new google.visualization.NumberFormat(
@@ -255,7 +259,7 @@ function drawChart() {
             bold: true,
             italic: false
         },
-        colors: ['red', 'rgb(160,32,240)', 'rgb(255, 170, 0)', 'rgb(34,139,34)', 'rgb(244,115,223)', 'rgb(0,92,230)', 'rgb(255,255,0)', 'rgb(130,130,130)'],
+        colors: ['rgb(255,0,0)', 'rgb(132,0,168)', 'rgb(0,92,230)', 'rgb(255,115,223)', 'rgb(205,205,102)', 'rgb(56,168,0)', 'rgb(255,240,0)', 'rgb(255,170,0)', 'rgb(156,156,156)', 'rgb(255,235,190)'],
         chartArea: {
             left: "10%",
             top: "10%",
