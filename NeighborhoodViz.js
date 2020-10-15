@@ -99,7 +99,7 @@ require([
         // Create the parcels layer
         var featureLayer = new FeatureLayer({
             title: "Parcels",
-            url: "https://services6.arcgis.com/GsVsRrkjMBA8FAhh/arcgis/rest/services/Parcels_TaxAssessor_LUAcres_FINAL_NewLU_090120/FeatureServer/0",
+            url: "https://services6.arcgis.com/GsVsRrkjMBA8FAhh/arcgis/rest/services/Parcels_TaxAssessor_LUAcres_FINAL_NewLU_Small_101620/FeatureServer/0",
             outFields: ["NHood"],
             definitionExpression: "NHood = '" + neighborhoodIdStr + "'"
         });
