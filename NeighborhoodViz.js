@@ -34,7 +34,7 @@ require([
 
     // Query the neighborhood layer to get the list of neighborhood names and Ids and add them to the dropdown list
     var queryTask = new QueryTask({
-        url: "https://services9.arcgis.com/r2aSdvRtDKoaZzPC/ArcGIS/rest/services/Neighborhood_Statistics_090220/FeatureServer/0"
+        url: "https://services6.arcgis.com/GsVsRrkjMBA8FAhh/arcgis/rest/services/Neighborhood_Statistics_090220/FeatureServer/0"
     });
     var query = new Query();
     query.returnGeometry = false;
@@ -99,7 +99,7 @@ require([
         // Create the parcels layer
         var featureLayer = new FeatureLayer({
             title: "Parcels",
-            url: "https://services9.arcgis.com/r2aSdvRtDKoaZzPC/arcgis/rest/services/PGH_Landuse_by_Parcel_090220_revised/FeatureServer/0",
+            url: "https://services6.arcgis.com/GsVsRrkjMBA8FAhh/arcgis/rest/services/Parcels_TaxAssessor_LUAcres_FINAL_NewLU_090120/FeatureServer/0",
             outFields: ["NHood"],
             definitionExpression: "NHood = '" + neighborhoodIdStr + "'"
         });
@@ -122,7 +122,7 @@ require([
         // Create the neighborhood layer
         featureLayer = new FeatureLayer({
             title: "Neighborhood",
-            url: "https://services9.arcgis.com/r2aSdvRtDKoaZzPC/ArcGIS/rest/services/Neighborhood_Statistics_090220/FeatureServer/0",
+            url: "https://services6.arcgis.com/GsVsRrkjMBA8FAhh/arcgis/rest/services/Neighborhood_Statistics_090220/FeatureServer/0",
             outFields: ["SqMi", "SqMi_Pct", "POP_17", "POP_PCT_CI", "EMP_17", "EMP_PCT_CI", "HU_17", "HU_PCT_CIT", "HHI_17", "HHI_CITYAV", "NAUTO_MODE", "AUTO_CITYA", "RCOSTB_PT", "OCOSTB_CIT", "WID_Norm", "WID_city", "VACAC_N", "VACAC_PCT", "GHG", "GHG_City", "Description", "Commercial", "Industrial", "Institutional", "Mixed_Use", "Other", "Parks__Open_Space", "Residential", "Residential_Multifamily","Transportation__Utilities", "Vacant_1"],
             renderer: neighborhoodRenderer,
             definitionExpression: "hood = '" + neighborhoodIdStr + "'"

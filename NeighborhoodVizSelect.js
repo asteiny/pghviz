@@ -8,7 +8,7 @@ require([
 
     // Query the neighborhood layer to get the list of neighborhood names and Ids and add them to the dropdown list
     var queryTask = new QueryTask({
-        url: "https://services9.arcgis.com/r2aSdvRtDKoaZzPC/arcgis/rest/services/Pittsburgh_Neighborhood_Database/FeatureServer/0"
+        url: "https://services6.arcgis.com/GsVsRrkjMBA8FAhh/arcgis/rest/services/Neighborhood_Statistics_090220/FeatureServer/0"
     });
     var query = new Query();
     query.returnGeometry = false;
